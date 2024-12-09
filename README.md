@@ -87,10 +87,12 @@ Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.do
 #### Ferramentas para orquestração usando Docker
  - [**Docker Swarm**](https://docs.docker.com/engine/swarm/)
  É o orquestrador nativo do Docker, integrado diretamente ao Docker Engine. O Swarm permite que você agrupe múltiplos nós (hosts) em um cluster, gerenciando-os como uma única entidade virtual. Com ele, é possível implantar serviços distribuídos, escalonar contêineres conforme a demanda e garantir alta disponibilidade. O Swarm é conhecido por sua facilidade de uso e integração direta com os comandos padrão do Docker, sendo uma opção adequada para ambientes menores ou para quem está iniciando na orquestração de contêineres
+ 
 ![Docker Swarm](./swarm-v1.png)
 
  - [**Docker Compose**](https://docs.docker.com/compose/)
  Embora não seja um orquestrador no sentido tradicional, o Docker Compose é uma ferramenta que facilita a definição e execução de aplicações multi-contêiner. Através de um arquivo YAML, você descreve os serviços que compõem sua aplicação, permitindo iniciá-los com um único comando. O Compose é amplamente utilizado em ambientes de desenvolvimento e testes, proporcionando uma maneira simples de gerenciar aplicações complexas em um único host.
+
 ![Docker Compose](./compose-v1.jpg)
 
 *Além dessas ferramentas, é importante mencionar o [**Kubernetes**](https://kubernetes.io), uma plataforma de orquestração de contêineres de código aberto que se tornou padrão na indústria. Embora não tenha sido desenvolvida pela Docker Inc., o Kubernetes é compatível com o Docker e oferece recursos avançados de orquestração, sendo amplamente adotado em ambientes de produção.*
