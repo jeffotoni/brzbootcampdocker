@@ -87,7 +87,7 @@ Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.do
 #### Ferramentas para orquestração usando Docker
  - [**Docker Swarm**](https://docs.docker.com/engine/swarm/)
  É o orquestrador nativo do Docker, integrado diretamente ao Docker Engine. O Swarm permite que você agrupe múltiplos nós (hosts) em um cluster, gerenciando-os como uma única entidade virtual. Com ele, é possível implantar serviços distribuídos, escalonar contêineres conforme a demanda e garantir alta disponibilidade. O Swarm é conhecido por sua facilidade de uso e integração direta com os comandos padrão do Docker, sendo uma opção adequada para ambientes menores ou para quem está iniciando na orquestração de contêineres
- 
+
 ![Docker Swarm](./swarm-v1.png)
 
  - [**Docker Compose**](https://docs.docker.com/compose/)
@@ -102,11 +102,26 @@ Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.do
 #### Ferramentas para monitoramento Docker
 
  - [Portainer](https://www.portainer.io/)
- - [Rancher](https://www.rancher.com)
+ Portainer é uma interface gráfica para gerenciamento de contêineres Docker, redes, volumes e imagens.
+ 
  - [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
+ Grafana é uma ferramenta de visualização de dados e monitoramento, popular por sua capacidade de criar dashboards personalizados.
+
  - [Prometheus](https://prometheus.io/docs/introduction/first_steps/)
+ Prometheus é uma ferramenta de monitoramento e coleta de métricas focada em sistemas distribuídos.
+
  - [Docker Stats (comando)](https://docs.docker.com/reference/cli/docker/container/stats)
+ Docker Stats é um comando CLI integrado ao Docker que exibe o uso de recursos dos contêineres em execução, como CPU, memória, E/S de disco e rede.
+
  - [LazyDocker (cli)](https://github.com/jesseduffield/lazydocker?tab=readme-ov-file)
+  LazyDocker é uma ferramenta de linha de comando interativa, escrita em Go, que oferece uma interface simplificada para gerenciar contêineres, redes, volumes e logs.
+
  - [Dry (cli)](https://github.com/moncho/dry?tab=readme-ov-file)
+ Dry é uma ferramenta CLI para monitorar e gerenciar contêineres, imagens e recursos Docker de forma prática e simplificada.
+
  - [Docker Desktop (Microsoft e Mac)](https://www.docker.com/products/docker-desktop)
+ Docker Desktop é uma aplicação oficial da Docker Inc. para Windows e macOS e que oferece uma interface gráfica para gerenciar contêineres localmente.
+
+ - [Rancher](https://www.rancher.com)
+ Rancher é uma plataforma completa para gerenciar ambientes de contêineres, especialmente clusters Kubernetes.
 
