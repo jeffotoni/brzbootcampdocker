@@ -4,10 +4,30 @@
 
 ### Topics
 =================
-
+* [Docker](#docker)
   * [O que é Docker](#o-que-e-docker)
-  * [Marco Inicial - LXC (Linux Containers)](#marco-inicial-lxc)
-  
+  * [Marco Inicial - LXC](#marco-inicial-lxc)
+  * [Crescimento e Adoção Rápida](#crescimento-e-adocao-rapida)
+  * [O que são Containers](#o-que-sao-containers)
+  * [O que é Efêmero](#o-que-e-efemero)
+  * [Contêiner Efêmeros](#container-efemeros)
+  * [Características dos Contêineres Efêmeros](#caracteristica-dos-container-efemeros)
+  * [Docker Registries](docker-registries)
+  * [Principais Funções de um Registry](principais-funcoes-de-um-registry)
+  * [Registries Públicos](registries-publicos)
+  * [Registries Privados](registries-privados)
+  * [Linguagem de Programação](linguagem-programacao)
+  * [Inspiração e Tecnologias de Base](inspiracao-e-tecnologias-de-base)
+  * [Outras Ferramentas parecidas com Docker](outras-ferramentas-parecidas-com-docker)
+  * [Impacto no Mundo da Computação](impacto-no-mundo-da-computacao)
+  * [Aquisição e Mudanças Recentes](aquisicao-e-mudancas-recentes)
+  * [Cultura de Comunidade](cultura-de-comunidade)
+  * [Por que usar Docker?](porque-usar-docker)
+  * [Cenários de Uso Comuns](cenarios-de-uso-comuns)
+  * [Ferramentas para orquestração usando Docker](ferramentas-para-orquestracao-usando-docker)
+  * [Ferramentas para monitoramento Docker](ferramentas-para-monitoramento-docker)
+
+### Docker
 
 #### O que é Docker ?
 O Docker é uma plataforma de código aberto que facilita a criação, execução e gerenciamento de aplicativos dentro de contêineres. Contêineres são ambientes leves e portáteis que encapsulam o código, bibliotecas e dependências necessárias para executar um software, garantindo que ele funcione de forma consistente em diferentes sistemas operacionais e infraestruturas.
@@ -34,7 +54,7 @@ Contêineres são unidades leves e portáteis que encapsulam um software junto c
 A palavra efêmero vem do grego ephemeros, que significa “duração de um dia”. 
 No contexto geral, efêmero refere-se a algo que tem uma duração breve ou transitória, algo que existe apenas por um curto período de tempo.
 
-#### Contêiner Efêmeros?
+#### Contêiner Efêmeros
 
 Um contêiner efêmero é aquele projetado para ter uma vida útil curta, ou seja, ele é criado para executar uma tarefa específica e ser descartado logo em seguida. Esse comportamento reflete um dos princípios fundamentais da computação em contêineres: impermanência.
 
@@ -48,19 +68,19 @@ Um contêiner efêmero é aquele projetado para ter uma vida útil curta, ou sej
 #### Docker Registries
 Um Docker Registry é um sistema que armazena, gerencia e distribui imagens de contêiner. Ele serve como um repositório centralizado para que desenvolvedores e equipes possam compartilhar, versionar e fazer deploy de imagens Docker de maneira eficiente.
 
-##### Principais Funções de um Registry
+#### Principais Funções de um Registry
  - Armazenamento de Imagens
  - Distribuição ( permite o download (pull) e permite o envio (push) )
  - Versionamento (v1.0, latest, etc.)
  - Automação (Integrações com pipelines CI/CD)
  - Segurança 
 
-##### Registries Públicos
+#### Registries Públicos
  - [Docker Hub](https://hub.docker.com/) 
  - [Quay.io](https://docs.quay.io/solution/getting-started.html)
  - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
 
-##### Registries Privados
+#### Registries Privados
 
  - [AWS ECR](https://docs.aws.amazon.com/pt_br/AmazonECR/latest/userguide/what-is-ecr.html)
  - [Azure ACR](https://azure.microsoft.com/pt-br/products/container-registry)
@@ -69,7 +89,7 @@ Um Docker Registry é um sistema que armazena, gerencia e distribui imagens de c
  - [DigitalOcean Registry](https://docs.digitalocean.com/products/container-registry/)
  - [Harbor](https://goharbor.io/)
 
-###### Linguagem de Programação
+#### Linguagem de Programação
 ![Go](go-v1.webp)
 
 O Docker é escrito principalmente em **Go**, a linguagem criada pelo **Google em medados de 2007** e lançada em 2009, foui escolhida devido sua eficiência, simplicidade e suporte nativo a concorrência.
@@ -81,7 +101,7 @@ Docker não inventou o conceito de contêineres, mas o tornou acessível e fáci
  - Cgroups (Control Groups) que gerenciam recursos como CPU e memória.
  - UnionFS (Sistema de Arquivos em Camadas) que são usados para criar imagens imutáveis.
 
-#### 2013 outras Ferramentas parecidas com Docker
+#### Outras Ferramentas parecidas com Docker (2013)
 
  - **LXC (Linux Containers)** fornecia isolamento de contêineres usando namespaces e cgroups do Linux.
  - Foi uma das principais bases sobre as quais o Docker foi construído inicialmente.
