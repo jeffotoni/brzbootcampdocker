@@ -38,6 +38,30 @@ Um contêiner efêmero é aquele projetado para ter uma vida útil curta, ou sej
  - Foco na imutabilidade
  - Apoio à escalabilidade
 
+#### Docker Registries
+Um Docker Registry é um sistema que armazena, gerencia e distribui imagens de contêiner. Ele serve como um repositório centralizado para que desenvolvedores e equipes possam compartilhar, versionar e fazer deploy de imagens Docker de maneira eficiente.
+
+##### Principais Funções de um Registry
+ - Armazenamento de Imagens
+ - Distribuição ( permite o download (pull) e permite o envio (push) )
+ - Versionamento (v1.0, latest, etc.)
+ - Automação (Integrações com pipelines CI/CD)
+ - Segurança 
+
+##### Registries Públicos
+ - [Docker Hub](https://hub.docker.com/) 
+ - [Quay.io](https://docs.quay.io/solution/getting-started.html)
+ - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+
+##### Registries Privados
+
+ - [AWS ECR](https://docs.aws.amazon.com/pt_br/AmazonECR/latest/userguide/what-is-ecr.html)
+ - [Azure ACR](https://azure.microsoft.com/pt-br/products/container-registry)
+ - [Google Artifact Registry (GAR)](https://cloud.google.com/artifact-registry/docs?hl=pt-br)
+ - [GitLab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry)
+ - [DigitalOcean Registry](https://docs.digitalocean.com/products/container-registry/)
+ - [Harbor](https://goharbor.io/)
+
 ###### Linguagem de Programação
 ![Go](go-v1.webp)
 
