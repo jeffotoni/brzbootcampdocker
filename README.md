@@ -94,6 +94,7 @@ Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.do
 ![Docker Compose](./compose-v1.jpg)
 
 *Além dessas ferramentas, é importante mencionar o [**Kubernetes**](https://kubernetes.io), uma plataforma de orquestração de contêineres de código aberto que se tornou padrão na indústria. Embora não tenha sido desenvolvida pela Docker Inc., o Kubernetes é compatível com o Docker e oferece recursos avançados de orquestração, sendo amplamente adotado em ambientes de produção.*
+
 ![k8s](./kubernetes_logo.png)
 
 #### Ferramentas para monitoramento Docker
@@ -106,3 +107,4 @@ Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.do
  - [LazyDocker (cli)](https://github.com/jesseduffield/lazydocker?tab=readme-ov-file)
  - [Dry (cli)](https://github.com/moncho/dry?tab=readme-ov-file)
  - [Docker Desktop (Microsoft e Mac)](https://www.docker.com/products/docker-desktop)
+
