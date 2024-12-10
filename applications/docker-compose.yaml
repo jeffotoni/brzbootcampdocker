@@ -4,9 +4,13 @@ networks:
 
 services:
   go-api:
-    build:
-      context: ./go/api  # Diretório onde está o Dockerfile do Go
-      dockerfile: DockerfileV2  # Opcional se o nome for 'Dockerfile'
+    image: jeffotoni/brzapibootcampdockerv3:1.0
+    container_name: go-api
+    hostname: goapi
+    domainname: goapi.local.com
+    #build:
+      #context: ./go/api  # Diretório onde está o Dockerfile do Go
+      #dockerfile: DockerfileV2  # Opcional se o nome for 'Dockerfile'
     ports:
       - "8080:8080"
     environment:
@@ -18,11 +22,17 @@ services:
       - app-network
 
   python-api:
-    build:
-      context: ./python/api  # Diretório onde está o Dockerfile do Python
-      dockerfile: Dockerfile  # Opcional se o nome for 'Dockerfile'
+    image: jeffotoni/pybrzapibootcampdocker:1.0
+    container_name: python-api
+    hostname: pythonap
+    domainname: pythonapi.local.com
+    #build:
+      #context: ./python/api  # Diretório onde está o Dockerfile do Python
+      #dockerfile: Dockerfile  # Opcional se o nome for 'Dockerfile'
     ports:
       - "8081:8080"
+    command: gunicorn -w 4 -b 0.0.0.0:8080 main:app
+
     environment:
       - REDIS_HOST=redis
     depends_on:

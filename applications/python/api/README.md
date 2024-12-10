@@ -299,3 +299,30 @@ $ docker rmi jeffotoni/pybrzapibootcampdocker
 Untagged: jeffotoni/pybrzapibootcampdocker:latest
 Deleted: sha256:a18b8697f4bbb2742dd09c400b85457fd2e2fa0918034b45b6ae75244899f5e7
 ```
+
+##### ENVIAR IMAGEM PARA REGISTRY
+Vamos usar Docker Hub [Entrar por aqui](https://hub.docker.com)
+
+O Docker Hub é um repositório de imagens de contêiner baseado em nuvem, mantido pela Docker Inc. Ele é a plataforma padrão onde desenvolvedores e equipes armazenam, compartilham e distribuem imagens de contêineres Docker.
+
+#####  Logando no Docker Hub
+```bash
+$ docker login
+Authenticating with existing credentials...
+Login Succeeded
+```
+
+#####  Enviando Imagem
+```bash
+$ docker push jeffotoni/pybrzapibootcampdocker:1.0
+```
+
+#####  Baixando Imagem
+```bash
+$ docker pull jeffotoni/pybrzapibootcampdocker:1.0
+```
+
+#####  Alterando Tag
+```bash
+$ docker tag jeffotoni/pybrzapibootcampdocker:1.0 jeffotoni/pybrzapibootcampdocker:2.0
+```

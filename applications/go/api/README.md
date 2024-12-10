@@ -313,3 +313,31 @@ $ docker rmi jeffotoni/brzapibootcampdockerv3
 Untagged: jeffotoni/brzapibootcampdockerv3:latest
 Deleted: sha256:a18b8697f4bbb2742dd09c400b85457fd2e2fa0918034b45b6ae75244899f5e7
 ```
+
+##### ENVIAR IMAGEM PARA REGISTRY
+
+Vamos usar Docker Hub [Entrar por aqui](https://hub.docker.com)
+
+O Docker Hub é um repositório de imagens de contêiner baseado em nuvem, mantido pela Docker Inc. Ele é a plataforma padrão onde desenvolvedores e equipes armazenam, compartilham e distribuem imagens de contêineres Docker.
+
+#####  Logando no Docker Hub
+```bash
+$ docker login
+Authenticating with existing credentials...
+Login Succeeded
+```
+
+#####  Enviando Imagem
+```bash
+$ docker push jeffotoni/brzapibootcampdockerv3:1.0
+```
+
+#####  Baixando Imagem
+```bash
+$ docker pull jeffotoni/brzapibootcampdockerv3:1.0
+```
+
+#####  Alterando Tag
+```bash
+$ docker tag jeffotoni/brzapibootcampdockerv3:1.0 jeffotoni/brzapibootcampdockerv3:2.0
+```
