@@ -1,0 +1,49 @@
+# Etapa 1: Build
+FROM golang:1.23.4-alpine3.19 AS builder
+
+# Instala apenas os pacotes necessários
+RUN apk add --no-cache git tzdata ca-certificates
+
+# Configura o diretório de trabalho
+WORKDIR /app
+
+# Copia apenas os arquivos necessários
+COPY main.go .
+COPY go.mod .
+
+# Variáveis de ambiente para compilação estática
+ENV GOOS=linux \
+    GOARCH=amd64 \
+    CGO_ENABLED=0 \
+    GO111MODULE=on \
+    GOPROXY=https://proxy.golang.org,direct \
+    GOSUMDB=off
+
+# Compila o binário Go
+RUN go build \
+    -trimpath \
+    -ldflags="-s -w" \
+    -buildvcs=false \
+    -o api .
+
+# Compressão do binário (opcional)
+RUN apk add --no-cache upx && upx --best api
+
+# Etapa 2: Imagem final mínima
+FROM scratch
+
+# Fuso horário
+ENV TZ=America/Sao_Paulo
+
+# Copia certificados e zoneinfo do build
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+
+# Copia o binário
+COPY --from=builder /app/api /usr/local/bin/api
+
+# Define a porta usada pela aplicação
+EXPOSE 8080
+
+# Define o comando de inicialização
+ENTRYPOINT ["/usr/local/bin/api"]

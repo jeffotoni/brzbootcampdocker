@@ -1,0 +1,39 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  go-api:
+    build:
+      context: ./go/api  # Diretório onde está o Dockerfile do Go
+      dockerfile: DockerfileV2  # Opcional se o nome for 'Dockerfile'
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+      - python-api
+    networks:
+      - app-network
+
+  python-api:
+    build:
+      context: ./python/api  # Diretório onde está o Dockerfile do Python
+      dockerfile: Dockerfile  # Opcional se o nome for 'Dockerfile'
+    ports:
+      - "8081:8080"
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    networks:
+      - app-network

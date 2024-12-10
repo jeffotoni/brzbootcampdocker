@@ -1,0 +1,40 @@
+# Etapa 1: Compilação do binário (build)
+FROM golang:1.23.4 AS builder
+
+# Configura o diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos do projeto para o contêiner
+COPY . .
+
+# Habilita a compilação de binários estáticos Mac
+# ENV GOOS=darwin
+# ENV GOARCH=arm64
+# ENV CGO_ENABLED=0
+
+# Configura o ambiente para Windows
+# ENV GOOS=windows
+# ENV GOARCH=amd64
+# ENV CGO_ENABLED=0
+
+# Configura o ambiente para Linux
+ENV GOOS=linux
+ENV GOARCH=amd64
+ENV CGO_ENABLED=0
+
+# Compila o binário Go
+RUN go build -a -ldflags="-s -w" -o api .
+RUN ls -lh
+RUN pwd
+
+# Etapa 2: Imagem mínima para execução
+FROM scratch
+
+# Copia o binário compilado
+COPY --from=builder /app/api /usr/local/bin/api
+
+# Define a porta usada pela aplicação
+EXPOSE 8080
+
+# Define o comando de inicialização
+ENTRYPOINT ["/usr/local/bin/api"]

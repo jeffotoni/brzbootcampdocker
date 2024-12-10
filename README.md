@@ -26,8 +26,12 @@
   * [Cenários de Uso Comuns](#cenarios-de-uso-comuns)
   * [Ferramentas para orquestração usando Docker](#ferramentas-para-orquestracao-usando-docker)
   * [Ferramentas para monitoramento Docker](#ferramentas-para-monitoramento-docker)
+  * [Instalar Docker](#instalar-docker)
+  * [Lista de alguns comandos Docker](#lista-de-alguns-comandos-docker)
+  
 
 ### Docker
+Acesse o site oficial para todos os detalhes:  [Site Oficial Docker](https://www.docker.com/)
 
 #### O que é Docker ?
 O Docker é uma plataforma de código aberto que facilita a criação, execução e gerenciamento de aplicativos dentro de contêineres. Contêineres são ambientes leves e portáteis que encapsulam o código, bibliotecas e dependências necessárias para executar um software, garantindo que ele funcione de forma consistente em diferentes sistemas operacionais e infraestruturas.
@@ -133,8 +137,6 @@ Docker não inventou o conceito de contêineres, mas o tornou acessível e fáci
  - Continuous Integration/Continuous Deployment (CI/CD).
  - Execução de cargas de trabalho isoladas.
 
-Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.docker.com/)
-
 #### Ferramentas para orquestração usando Docker
  - [**Docker Swarm**](https://docs.docker.com/engine/swarm/)
  É o orquestrador nativo do Docker, integrado diretamente ao Docker Engine. O Swarm permite que você agrupe múltiplos nós (hosts) em um cluster, gerenciando-os como uma única entidade virtual. Com ele, é possível implantar serviços distribuídos, escalonar contêineres conforme a demanda e garantir alta disponibilidade. O Swarm é conhecido por sua facilidade de uso e integração direta com os comandos padrão do Docker, sendo uma opção adequada para ambientes menores ou para quem está iniciando na orquestração de contêineres
@@ -176,3 +178,56 @@ Aqui você irá encontrar mais detalhes de todo projeto. [Docker](https://www.do
  - [Rancher](https://www.rancher.com)
  Rancher é uma plataforma completa para gerenciar ambientes de contêineres, especialmente clusters Kubernetes.
 
+#### Instalar Docker
+Para instalar o Docker em seu sistema operacional entra no site oficial e escolha o sistema operacional conforme sua necessidade.
+[Site Oficial Instalar Docker](https://docs.docker.com/engine/install/)
+
+
+##### Definição básica Dockerfile
+
+```bash
+# Usando a imagem 
+FROM <imagem>
+
+# Definindo o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copiando os arquivos necessários para o diretório de trabalho
+COPY . .
+
+# Instalando as pacotes/dependencias
+RUN <comandos>
+
+# Expondo a porta 8080
+EXPOSE 8080
+
+# Comando para iniciar a aplicação
+CMD ["<linguagem>", "<executavel>"]
+```
+
+#### Lista de alguns comandos Docker
+
+ - docker build
+ - docker run
+ - docker ps
+ - docker stop
+ - docker start
+ - docker restart
+ - docker rm
+ - docker rmi
+ - docker logs
+ - docker exec
+ - docker images
+ - docker pull
+ - docker push
+ - docker tag
+ - docker network
+ - docker volume
+ - docker scout quickview
+ - docker stats
+ - docker prune
+ - docker system df
+ - docker system info
+ - docker system events
+ - docker inspect
+ - docker compose
